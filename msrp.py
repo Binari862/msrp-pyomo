@@ -40,7 +40,7 @@ precios = precios.loc[:, precios.notna().mean() >= MIN_DATA_FRAC]
 activos_ok = list(precios.columns)
 faltantes = sorted(set(activos) - set(activos_ok))
 if faltantes:
-    print("⚠️ Se excluyen tickers sin datos suficientes:", faltantes)
+    print(" Se excluyen tickers sin datos suficientes:", faltantes)
 if len(activos_ok) < 2:
     raise ValueError("No hay suficientes activos con datos para optimizar.")
 # Rendimientos diarios (sin relleno implícito)
